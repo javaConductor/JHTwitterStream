@@ -1,0 +1,20 @@
+apply plugin: 'scala'
+apply plugin: 'application'
+
+mainClassName = 'sample.twitterstreams.Main'
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.scala-lang:scala-library-all:2.11.0'
+    compile 'com.twitter:hbc-core:2.2.0'
+    compile group: 'net.oauth.core', name: 'oauth', version: '20100527'
+    compile group: 'org.twitter4j', name: 'twitter4j-stream', version: '4.0.5'
+    compile "org.json4s:json4s-jackson_2.11:3.4.0"
+    compile "com.github.scopt:scopt_2.11:3.3.0"
+
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+  compile "org.slf4j:slf4j-api:1.7.21"
+  compile  "org.scalatest:scalatest:1.3"
+}
