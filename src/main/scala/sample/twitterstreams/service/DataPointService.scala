@@ -18,7 +18,6 @@ class DataPointService(dataPointQueue: BlockingQueue[DataPoint],
 
   var currentReport = new Report(Map())
   def start(): Unit ={
-  //  println ("Starting DataPointProcessor()")
       new Thread(new DataPointProcessor( dataPointQueue,
         _onReport,
         reportFrequencySeconds,
@@ -39,10 +38,11 @@ class DataPointService(dataPointQueue: BlockingQueue[DataPoint],
     val task = new Runnable {
       def run() = onReport (currentReport)
     }
-    Executors.newScheduledThreadPool(1).scheduleAtFixedRate(task,
-                                                            reportFrequencySeconds,
-                                                            reportFrequencySeconds,
-                                                            TimeUnit.SECONDS)
+    Executors.
+    newScheduledThreadPool(1).
+    scheduleAtFixedRate(task,
+                        reportFrequencySeconds,
+                        reportFrequencySeconds,
+                        TimeUnit.SECONDS)
   }
-
 }

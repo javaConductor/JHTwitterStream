@@ -5,6 +5,10 @@ import java.util.Date
 import sample.twitterstreams.extractor.TweetReceived
 import sample.twitterstreams.model._
 
+/**
+  * Creates and updates TotalNumberOfTweets statistic from TweetReceived dataPoints
+  */
+
 case class TotalNumberOfTweets ( total: Int ) extends Statistic {
   override def report(): String = s"Total Number of Tweets: $total"
 }

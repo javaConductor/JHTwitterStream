@@ -19,12 +19,9 @@ class MessageService(msgQueue: BlockingQueue[String],
 
   val threadPool: ExecutorService = Executors.newFixedThreadPool(nThreads)
   def start(): Unit = {
-    println(s"Starting messageService ${nThreads} threads...")
     /// start nThreads threads
     (0 to nThreads) foreach ((n:Int) => {
-      println(s"Starting messageService thread $n")
       threadPool.execute(new MessageProcessor(msgQueue, dataPointQueue, isDone ));
     })
-    println("Started messageService threads!")
   }
 }

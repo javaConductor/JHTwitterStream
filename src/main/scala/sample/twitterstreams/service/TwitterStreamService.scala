@@ -74,5 +74,4 @@ class TwitterStreamService(reportFrequencySeconds:Int, config: Config) {
   def publishReport( report: Report ) = {
     listeners foreach  { _(report) }
   }
-
 }

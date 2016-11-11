@@ -6,7 +6,7 @@ import sample.twitterstreams.extractor.TweetReceived
 import sample.twitterstreams.model.{DataPoint, Report, Statistic}
 
 /**
-  * Created by lee on 11/2/16.
+  * Creates and updates AverageTweetsPerSec statistic from TweetsReceived dataPoints
   */
 
   case class AverageTweetsPerSec( start: Date, totalTweets: Long ) extends Statistic {

@@ -6,7 +6,7 @@ import org.json4s._
 import sample.twitterstreams.model.{DataPoint}
 
 /**
-  * find hash tags in message.
+  * find urls in message.
   */
 
 class UrlFoundExtractor extends DataPointExtractor{

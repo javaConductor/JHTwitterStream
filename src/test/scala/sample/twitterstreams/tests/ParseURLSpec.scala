@@ -5,9 +5,9 @@ import java.util.concurrent.ArrayBlockingQueue
 import org.json4s.jackson.JsonMethods
 import org.json4s.{StringInput, _}
 import org.scalatest._
+import org.scalatest.Matchers
 import sample.twitterstreams.extractor.{UrlFound, UrlFoundExtractor}
-import sample.twitterstreams.model.{DataPoint}
-import sample.twitterstreams.queueprocessor.MessageProcessor
+import sample.twitterstreams.model.DataPoint
 
 /**
   * Created by lcollins on 11/7/2016.
@@ -22,6 +22,7 @@ class ParseURLSpec extends FlatSpec with Matchers {
       "id": "411031503817039874",
       "id_str": "411031503817039874",
 		  "text": "This is one URL http://linkedin.com",
+	    "entities" : {
 	    "urls": [{
       |            "url": "http:\/\/t.co\/p5dOtmnZyu",
       |            "expanded_url": "http:\/\/dev.twitter.com",
@@ -33,6 +34,7 @@ class ParseURLSpec extends FlatSpec with Matchers {
       |            "display_url": "pic.twitter.com\/ZSvIEMOPb8",
       |            "indices": [55, 78]
       |        }]
+	  |        }
 		}""".stripMargin))
       val extractor = new UrlFoundExtractor
 

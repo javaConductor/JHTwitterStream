@@ -6,7 +6,7 @@ import sample.twitterstreams.extractor.UrlFound
 import sample.twitterstreams.model._
 
 /**
-  * Created by lcollins on 11/8/2016.
+  * Creates and updates TopURLsInTweets statistic from UrlFound dataPoints
   */
 case class TopURLsInTweets(urlsInTweets: Map[String, Int]) extends Statistic {
   def sortUrls = (a: Tuple2[String, Int], b: Tuple2[String, Int]) => a._2 > b._2

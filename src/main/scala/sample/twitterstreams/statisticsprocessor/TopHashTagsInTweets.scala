@@ -7,7 +7,7 @@ import sample.twitterstreams.model.{DataPoint, Report, Statistic}
 
 /**
   *
-  * Created by lcollins on 11/8/2016.
+  * Creates and updates TopHashTagsInTweets statistic from HashTagsFound dataPoints
   */
 case class TopHashTagsInTweets( hashTagsInTweets: Map[String, Int ] ) extends Statistic {
   def sortHashTags = (a : Tuple2[String, Int], b: Tuple2[String, Int]) =>  a._2 > b._2

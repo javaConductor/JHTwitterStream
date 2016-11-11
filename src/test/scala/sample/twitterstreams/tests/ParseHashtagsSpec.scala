@@ -6,6 +6,7 @@ import java.util.concurrent.ArrayBlockingQueue
 import org.json4s.jackson.JsonMethods
 import org.json4s.{StringInput, _}
 import org.scalatest._
+import org.scalatest.Matchers
 import sample.twitterstreams.extractor.{HashTagsFound, HashTagsFoundExtractor}
 import sample.twitterstreams.model.DataPoint
 

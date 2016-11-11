@@ -7,7 +7,7 @@ import sample.twitterstreams.model._
 import sample.twitterstreams.service.EmojiService
 
 /**
-  * Created by lcollins on 11/8/2016.
+  * Creates and updates TopEmojisInTweets statistic from EmojisFound dataPoints
   */
 case class TopEmojisInTweets(emojis: Map[String, Int] ) extends Statistic {
 
