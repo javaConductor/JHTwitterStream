@@ -11,11 +11,11 @@ import sample.twitterstreams.extractor.{HashTagsFound, HashTagsFoundExtractor}
 import sample.twitterstreams.model.DataPoint
 
 /**
-  * Created by lcollins on 11/7/2016.
+  * Test parsing hashtags from tweet
   */
 class ParseHashtagsSpec extends FlatSpec with Matchers {
 
-    "MessageProcessor" should "find 1 hashtags and return one HashTagDataPoint" in {
+    "HashTagsFoundExtractor" should "find 1 hashtags and return one HashTagDataPoint" in {
       val msgQ = new ArrayBlockingQueue[String](1)
       val dataPtQ = new util.concurrent.LinkedBlockingQueue[DataPoint]()
       val json: JValue = JsonMethods.parse(new StringInput( """{
@@ -46,5 +46,4 @@ class ParseHashtagsSpec extends FlatSpec with Matchers {
       dataPoints.head shouldBe a [HashTagsFound]
       dataPoints should have length 1
     }
-
   }
