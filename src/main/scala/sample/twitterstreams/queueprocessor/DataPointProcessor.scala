@@ -25,7 +25,11 @@ class DataPointProcessor(dataPointQueue: BlockingQueue[DataPoint],
    new AverageTweetsPerSecProcessor,
    new TopURLsInTweetsProcessor,
    new TopHashTagsInTweetsProcessor,
-   new TopEmojisInTweetsProcessor
+   new TopEmojisInTweetsProcessor,
+   new TopURLDomainsInTweetsProcessor,
+   new PercentageOfTweetsWithURLsProcessor,
+   new PercentageOfTweetsWithEmojisProcessor,
+   new PercentageOfTweetsWithPhotoURLsProcessor
   )
 
   @tailrec
